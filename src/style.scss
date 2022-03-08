@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap');
+
+* {
+    font-family: "Anonymous Pro", monospace;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #F9E4D4;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        min-width: 300px;
+    }
+
+    &__fieldset {
+        gap: 15px;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: row;
+        border: 2px solid #470D21;
+        box-shadow: 3px 3px 0 #470D21;
+    }
+
+    &__input,
+    &__button {
+        padding: 15px;
+        border-radius: 10px;
+        border: 2px solid #470D21;
+        box-shadow: 3px 3px 0 #470D21;
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+
+    &__input {
+        &--fullWidth {
+            grid-area: auto / 1 / auto / 3;
+            width: 100%;
+        }
+    }
+
+    &__button {
+        cursor: pointer;
+        background-color: #D67D3E;
+        transition: .2s cubic-bezier(.84,.01,.66,.86);
+        color: #F9E4D4;
+
+        &:hover {
+            box-shadow: none;
+            transform: translate(3px, 3px);
+        }
+    }
+}
