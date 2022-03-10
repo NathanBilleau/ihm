@@ -2,27 +2,44 @@ doctype html
 html(lang="fr")
     head
         meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        script(src="main.ts", defer)
-        link(rel="stylesheet", href="style.scss")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        script(src="register.ts", defer)
+        link(rel="stylesheet" href="style.scss")
         title Connexion
     body 
-        form.form__form#registerForm
+        form.form.form__form#registerForm
             h1 Inscription
-            input.form__input(type="text", name="name", placeholder="Nom", pattern="[A-Za-z]*", required, title="Le nom ne doit contenir que des lettres") 
-            input.form__input(type="text", name="id", placeholder="Identifiant", pattern="[A-Z][A-Za-z]{5,7}", title="L'identifiant doit contenir entre 5 et 8 lettres et commencer par une majsucule", required) 
-            input.form__input(type="email", name="email", placeholder="Mail", required) 
-            input.form__input(type="email", name="emailConfirmation", placeholder="Confirmation du mail", required) 
+
+            label.required(for="name") Nom
+            input.form__input(type="text", id="name" placeholder="Nom" pattern="[A-Za-z]*", required, title="Le nom ne doit contenir que des lettres") 
+
+            label.required(for="id") Identifiant
+            input.form__input(type="text" name="id" id="id" placeholder="Identifiant" pattern="[A-Z][A-Za-z]*" minLength="5" maxLength="8" title="L'identifiant doit contenir entre 5 et 8 lettres et commencer par une majsucule", required) 
+
+            label.required(for="email") Email
+            input.form__input(type="email" name="email" id="email" placeholder="Mail", required) 
+
+            label.required(for="emailConfirmation") Confirmation du mail
+            input.form__input(type="email" name="emailConfirmation" id="emailConfirmation" placeholder="Confirmation du mail", required) 
+
             fieldset.form__fieldset
                 legend Adresse
-                input.form__input.form__input--fullWidth(type="text", name="address", placeholder="Adresse", required) 
-                input.form__input(type="text", name="city", placeholder="Ville", required) 
-                input.form__input(list="zipList", name="zip", placeholder="Code postal", pattern="[0-9]{5}", required, autocomplete="off") 
+
+                label.required(for="address") Adresse
+                input.form__input(type="text" name="address" id="address" placeholder="Adresse", required) 
+
+                label.required(for="city") Ville
+                input.form__input(type="text" name="city" id="city" placeholder="Ville", required) 
+
+                label.required(for="zip") Code postal
+                input.form__input(list="zipList" name="zip" id="zip" placeholder="Code postal" pattern="[0-9]{5}", required) 
                 datalist#zipList
 
-            input.form__input(type="password", name="password", placeholder="Mot de passe", pattern=".{5,12}", title="Le mot de passe doit contenir entre 5 et 12 caractères" required)
-            input.form__input(type="password", name="passwordConfirmation", placeholder="Confirmation du mot de passe", pattern=".{5,12}", title="Le mot de passe doit contenir entre 5 et 12 caractères", required)
+            label.required(for="password") Mot de passe
+            input.form__input(type="password" name="password" id="password" placeholder="Mot de passe" pattern=".{5,12}" title="Le mot de passe doit contenir entre 5 et 12 caractères", required)
+            label.required(for="passwordConfirmation") Confirmation du mot de passe
+            input.form__input(type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Confirmation du mot de passe" pattern=".{5,12}" title="Le mot de passe doit contenir entre 5 et 12 caractères", required)
             .form__buttonsContainer
-                a.form__button.form__button--secondary(type="button", href="./index.pug") Annuler
+                a.form__button.form__button--secondary(href="./index.pug") Annuler
                 button.form__button(type="submit") M'inscrire

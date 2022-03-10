@@ -5,7 +5,7 @@
 }
 body {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #F9E4D4;
     
     display: flex;
@@ -34,7 +34,27 @@ h1 {
         display: flex;
         flex-direction: column;
         gap: 13px;
-        min-width: 300px;
+        min-width: 30vw;
+    }
+
+    label {
+        display: flex;
+        flex-direction: column;
+        display: block;
+        padding-top: 15px;
+
+        &.required{
+            &::after {
+                content: " *";
+                display: inline-block;
+                color: red;
+                font-size: 1em;
+            }
+        }
+
+        small {
+            display: block;
+        }
     }
 
     &__fieldset {
@@ -58,16 +78,15 @@ h1 {
     }
 
     &__input {
-        &--fullWidth {
-            grid-area: auto / 1 / auto / 3;
-            width: 100%;
-        }
+        grid-area: auto / 1 / auto / 3;
+        width: 100%;
     }
 
     &__buttonsContainer {
         display: flex;
         flex-direction: row;
         gap: 13px;
+        margin-top: 30px;
     }
 
     &__button {
@@ -88,6 +107,26 @@ h1 {
         &:hover {
             box-shadow: none;
             transform: translate(3px, 3px);
+        }
+    }
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    .emoji {
+        position: absolute;
+        z-index: -1;
+        opacity: .3;
+
+        &:hover {
+            opacity: 1;
+            transform: scale(3);
         }
     }
 }
