@@ -6,7 +6,7 @@ body.appendChild(background)
 
 
 
-for (let index = 0; index < 100; index++) {
+for (let index = 0; index < 500; index++) {
     const emoji = document.createElement('div')
     emoji.classList.add('emoji')
     emoji.textContent = '🍩'
