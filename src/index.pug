@@ -6,18 +6,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         script(src="main.ts", defer)
         link(rel="stylesheet", href="style.scss")
-        title Connexion
+        title Home
     body 
-        form.form__form#loginForm
-            input.form__input(type="text", name="name", placeholder="Nom", required) 
-            input.form__input(type="text", name="id", placeholder="Identifiant", pattern="[A-Z][A-Za-z]{5,7}", title="L'identifiant doit contenir entre 5 et 8 lettres et commencer par une majsucule", required) 
-            input.form__input(type="email", name="email", placeholder="Mail", required) 
-            input.form__input(type="email", name="emailConfirmation", placeholder="Confirmation du mail", required) 
-            fieldset.form__fieldset
-                legend Adresse
-                input.form__input.form__input--fullWidth(type="text", name="address", placeholder="Adresse", required) 
-                input.form__input(type="text", name="city", placeholder="Ville", required) 
-                input.form__input(type="text", name="zip", placeholder="Code postal", pattern="[0-9]{5}", required) 
-            input.form__input(type="password", name="password", placeholder="Mot de passe", pattern=".{5,12}", title="Le mot de passe doit contenir entre 5 et 12 caractères" required)
-            input.form__input(type="password", name="passwordConfirmation", placeholder="Confirmation du mot de passe", pattern=".{5,12}", title="Le mot de passe doit contenir entre 5 et 12 caractères", required)
-            button.form__button(type="submit") Connexion
+        h1 Inscription IHM
+        a.home__register(href="./register.pug") Inscription

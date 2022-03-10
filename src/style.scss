@@ -9,20 +9,36 @@ body {
     background-color: #F9E4D4;
     
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.home__register {
+    padding: 13px 15px;
+    border-radius: 10px;
+    border: 2px solid #470D21;
+    box-shadow: 3px 3px 0 #470D21;
+    font-weight: bold;
+    box-sizing: border-box;
+    color: #470D21;
+    text-decoration: none;
 }
 
 .form {
     &__form {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 13px;
         min-width: 300px;
     }
 
     &__fieldset {
-        gap: 15px;
+        gap: 13px;
         border-radius: 10px;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -33,7 +49,7 @@ body {
 
     &__input,
     &__button {
-        padding: 15px;
+        padding: 13px 15px;
         border-radius: 10px;
         border: 2px solid #470D21;
         box-shadow: 3px 3px 0 #470D21;
@@ -48,11 +64,26 @@ body {
         }
     }
 
+    &__buttonsContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 13px;
+    }
+
     &__button {
         cursor: pointer;
         background-color: #D67D3E;
-        transition: .2s cubic-bezier(.84,.01,.66,.86);
         color: #F9E4D4;
+        flex: 1;
+        text-decoration: none;
+        font-size: .9rem;
+        text-align: center;
+        transition: .2s cubic-bezier(.84,.01,.66,.86);
+
+        &--secondary {
+            background-color: #F9E4D4;
+            color: #470D21;
+        }
 
         &:hover {
             box-shadow: none;

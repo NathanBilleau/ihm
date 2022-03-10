@@ -1,10 +1,10 @@
 {
   "name": "ihm",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/index.pug"
+    "dev": "parcel src/index.pug",
+    "build": "parcel build src/index.pug"
   },
   "dependencies": {
     "parcel": "^2.3.2"
